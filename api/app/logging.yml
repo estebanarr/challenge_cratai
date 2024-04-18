@@ -1,0 +1,33 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+    simple:
+        format: "%(message)s"
+handlers:
+    console:
+        class: logging.StreamHandler
+        level: DEBUG
+        formatter: simple
+        stream: ext://sys.stdout
+    info_file_handler:
+        class: logging.StreamHandler
+        level: DEBUG
+        formatter: simple
+        stream: ext://sys.stdout
+    error_file_handler:
+        class: logging.StreamHandler
+        level: DEBUG
+        formatter: simple
+        stream: ext://sys.stdout
+loggers:
+    uvicorn:
+        level: CRITICAL
+        handlers: [console]
+        propagate: no
+    gunicorn:
+        level: CRITICAL
+        handlers: [console]
+        propagate: no
+root:
+    level: DEBUG
+    handlers: [console]

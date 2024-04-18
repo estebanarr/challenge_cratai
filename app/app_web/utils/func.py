@@ -6,12 +6,12 @@ from deep_translator import GoogleTranslator
 from collections import Counter
 import re
 import nltk
-import itertools
 
 
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
+nltk.download('averaged_perceptron_tagger')
 
 stop_words_en = set(stopwords.words('english'))
 stop_words_es = set(stopwords.words('spanish'))
@@ -64,7 +64,7 @@ def preprocess_text(text : str):
 
     word_counts = Counter(lemmatized_tokens)
 
-    filtered_words = {word for word in word_counts.keys() if word not in stop_words_en and word not in stop_words_es and len(word)>2}
+    filtered_words = [word for word in word_counts.keys() if word not in stop_words_en and word not in stop_words_es and len(word)>2]
 
     return filtered_words
 
