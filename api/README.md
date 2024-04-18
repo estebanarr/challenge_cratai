@@ -1,2 +1,2 @@
-# clifind_app
+# Api for sustainability prediction
 

@@ -63,12 +63,11 @@ class Evaluator:
 
         logger.debug("Input transformed", data_model)
         prediccion= self.model.predict_proba(data_model)
-        prob_label_0 = prediccion[0][1]
+        prob_label_0 = prediccion[0][0]
         prob_label_1 = prediccion[0][1]
-        prediction_class = str(prediccion[0][1] > 0.025518)
-
-        print(prediction_class)
+        prediction_class = prediccion[0][1] > 0.025518
     
+        logger.debug("Prediction done", prediccion)
 
         resp = Response(
             prob_label_0=prob_label_0,
