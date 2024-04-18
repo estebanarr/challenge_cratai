@@ -1,2 +1,1 @@
-![Getting Started](./images/img.jpg)
-
+![alt text](image.png)
