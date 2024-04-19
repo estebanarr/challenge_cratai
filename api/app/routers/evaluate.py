@@ -65,7 +65,7 @@ class Evaluator:
         prediccion= self.model.predict_proba(data_model)
         prob_label_0 = prediccion[0][0]
         prob_label_1 = prediccion[0][1]
-        prediction_class = prediccion[0][1] > 0.025518
+        prediction_class = prediccion[0][1] > get_settings().threshold
     
         logger.debug("Prediction done", prediccion)
 
