@@ -8,14 +8,6 @@ services:
       replicas: 1
       placement:
         constraints: [node.labels.type != tiebreaker]
-      labels:
-        - "traefik.enable=true"
-        - "traefik.http.routers.api.rule=PathPrefix(`/api`)"
-        - "traefik.http.routers.api.tls=true"
-        - "traefik.http.routers.api.middlewares=api_stripprefix,api_compress"
-        - "traefik.http.middlewares.api_stripprefix.stripprefix.prefixes=/api"
-        - "traefik.http.middlewares.api_compress.compress=true"
-        - "traefik.http.services.api.loadbalancer.server.port=80"
     ports:
       - "8070:80"
     networks:
