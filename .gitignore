@@ -1,8 +1,5 @@
-# ml_models/
-ml_models_out/
-# danger_tables/
-# app/version.txt
-
+*.parquet
+*.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
